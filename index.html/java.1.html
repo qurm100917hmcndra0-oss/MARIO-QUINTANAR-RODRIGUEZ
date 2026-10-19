@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Mario Quintanar Rodriguez</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+       
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.4s ease;
+        }
+
+        .btn-interruptor {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #00ffff;
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #00ffff;
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+        .btn-interruptor:hover { transform: scale(1.05); }
+
+        .reloj-pantalla {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ffff;
+            padding: 12px 20px;
+            font-family: monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 15px #00ffff;
+            z-index: 1000;
+        }
+
+        .lista-estilizada li {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 8px 0;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #00ffff;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .lista-estilizada li:hover { background: rgba(0, 255, 255, 0.1); }
+
+        table { width: 100%; max-width: 600px; margin: 20px 0; border-collapse: collapse; background: rgba(0, 0, 0, 0.3); }
+        th, td { padding: 10px; border-bottom: 1px solid rgba(0, 255, 255, 0.2); }
+        
+        .btn-contador {
+            background: #ff6464; color: white; border: none; padding: 8px 16px; 
+            border-radius: 4px; cursor: pointer; font-weight: bold; margin-left: 10px;
+        }
+        nav a:hover {
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .multimedia-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px dashed hsla(180, 52%, 42%, 0.658);
+            background: hsla(0, 76%, 40%, 0.76); padding: 20px; 
+            border-radius: 12px; margin-top: 20px; border: 1px dashed rgba(0, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div class="reloj-pantalla" id="relojDigital">00:00:00</div>
+    <button class="btn-interruptor" onclick="alternarColor()"> Cambiar Color</button>
+
+    <header style="margin-top: 80px;">
+        <img id="fotoPerfil" src="file:///C:/Users/PC_36/Downloads/1791171117220.jpg" alt="lo" width="200" height="200" style="cursor: pointer;">
+        <h1><marquee behavion="alternate"><spam style="color: rgb(126, 201, 201);">¡Hola mucho gusto!</spam></h1>
+        <hr>
+        
+        <ol class="lista-estilizada">
+            <li onclick="mostrarDetalleGusto('¡El fútbol es el mejor deporte del mundo!')"><span style="color: rgb(145, 209, 209);">Me gusta jugar fútbol (Haz clic)</span></li>
+            <li onclick="mostrarDetalleGusto('¡Nada como un buen pastel o chocolate!')"><span style="color: rgb(163, 221, 221);">Me gustan los postres (Haz clic)</span></li>
+            <li onclick="mostrarDetalleGusto('¡A darle con todo a las partidas!')"><span style="color: rgb(131, 235, 121);">Me gusta jugar videojuegos (Haz clic)</span></li>
+        </ol>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="file:///C:/Users/PC_36/Documents/MARIO2.html" onclick="return confirmarNavegacion(event)">Mis gustos</a></li>
+            <li><a href="file:///C:/Users/PC_36/Documents/formulario.html" onclick="return confirmarNavegacion(event)">Formulario</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2><span style="color: #00ffff;">Yo soy</span></h2>
+        <ul class="lista-estilizada">
+            <li><span style="color: rgb(243, 145, 145);">Se me rompió mi pantalón</span></li>
+            <li><span style="color: rgb(230, 236, 236);">Me caí</span></li>
+            <li><span style="color: rgb(95, 138, 255);">Soy bueno en los videojuegos</span></li>
+            <li><span style="color: rgb(27, 102, 102);">Se me perdió mi reloj</span></li>
+            <li><span style="color: rgb(110, 110, 110);">Me caí cuando me estaba levantando</span></li>
+            <li><span style="color: rgb(82, 167, 167);">Soy una persona gentil</span></li>
+        </ul>
+
+        <h2>Mis Amigos <button class="btn-contador" onclick="contarAmigos()">Contar Clics: <span id="numClics">0</span></button></h2>
+        
+        <table>
+            <tr>
+                <th><span style="color: rgb(134, 47, 47);">AMIGO</span></th>
+                <th><span style="color: rgb(41, 124, 124);">NOMBRE</span></th>
+                <th><span style="color: rgb(144, 150, 150);">IMAGEN</span></th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Andres</td>
+                <td><img src="file:///C:/Users/PC_36/Downloads/1791172082004.jpg" alt="m1" width="120" height="120"> </td>
+   </tr>
+   <tr>
+    <td><p style="color: rgb(255, 213, 122);">2</p></td>
+    <td><p style="color: rgb(1, 66, 66);">Daniel</p></td>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">3</p></td>
+    <td><p style="color: aqua;">Jesus</p></td>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">4</p></td>
+    <td><p style="color: aqua;">Raul</p></td>
+   </tr>
+</table>
+<img src=""alt="">
+<table border="1">
+   <tr>
+   <th><p style="color: aqua;">AMIGO</p></th>
+   <th><p style="color: aqua;">NOMBRE</p></th>
+   <th><p style="color: aqua;">IMAGEN</p></th>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">1</p></td>
+    <td><p style="color: aqua;">Pedro</p></td>
+    <td><img src="file:///C:/Users/PC_36/Downloads/1791172229679.jpg" alt="m1" width="120" height="120"> </td>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">2</p></td>
+    <td><p style="color: aqua;">Miguel</p></td>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">3</td>
+    <td><p style="color: aqua;">Alfredo</p></td> 
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">4</p></td>
+    <td><p style="color: aqua;">Rafita</p></td>
+   </tr>
+   </table>
+   <img src=""alt="">
+<table border="1">
+   <tr>
+   <th><p style="color: aqua;">AMIGO</p></th>
+   <th><p style="color: aqua;">NOMBRE</p></th>
+   <th><p style="color: aqua;">IMAGEN</p></th>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">1</p></td>
+    <td><p style="color: aqua;">Adair</p></td>
+    <td><img src="file:///C:/Users/PC_36/Pictures/Screenshots/ultima%20.png" alt="m1" width="120" height="120"> </td>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">2</p></td>
+    <td><p style="color: aqua;">Rene</p></td>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">3</p></td>
+    <td><p style="color: aqua;">lamin</p></td>
+   </tr>
+   <tr>
+    <td><p style="color: aqua;">4</p></td>
+    <td><p style="color: aqua;">Donovan</p></td>
+   </tr>
+</table>
+   <div style="display: flex;justify-content: center;">
+   <h1><p style="color: aqua;">Mi misión: terminar la prepa con buen promedio</p></h1>
+   </div>
+   <div style="display: flex;justify-content: center;">
+   <h1><p style="color: aqua;">Visión: es lograr encontar un empleo estable </p></h1>
+   </div>
+   </nav>
+   <section>
+   <p id="NOMBRE"><p style="color: aqua;">MARIO QUINTANAR RODRIGUEZ</p>
+   <p id="CORREO"><p style="color: aqua;">qurm100917hmcndra0@soycecytem.mx</p>
+   <p id="REDES"><p style="color: aqua;">@dze_mario</p>
+<video width="640" height="360" controls>
+<source src="c:\Users\PC_36\Downloads\Download (6).mp4">
+</video>
+<div style="margin-bottom: 40px;">
+<audio controls>
+<source src="c:\Users\PC_36\Downloads\Download (4).mp4">
+</source>
+</audio>
+</div>
+</section> 
+
+   
+    <script>
+        
+        function correrReloj() {
+            const tiempo = new Date();
+            document.getElementById('relojDigital').innerText = tiempo.toLocaleTimeString();
+        }
+        setInterval(correrReloj, 1000);
+        correrReloj();
+
+        let colorOriginal = true;
+        function alternarColor() {
+            document.body.style.backgroundColor = colorOriginal ? "#0b1521" : "#121212";
+            colorOriginal = !colorOriginal;
+        }
+
+        
+        let totalClics = 0;
+        function contarAmigos() {
+            totalClics++;
+            document.getElementById('numClics').innerText = totalClics;
+        }
+
+        function inicializarSaludo() {
+            const hora = new Date().getHours();
+            const titulo = document.getElementById('saludoDinamico');
+            if (hora < 12) {
+                titulo.innerText = "¡Buenos días! Mis gustos son:";
+            } else if (hora < 19) {
+                titulo.innerText = "¡Buenas tardes! Mis gustos son:";
+            } else {
+                titulo.innerText = "¡Buenas noches! Mis gustos son:";
+            }
+        }
+
+        const foto = document.getElementById('fotoPerfil');
+        let rotacion = 0;
+        foto.addEventListener('click', function() {
+            rotacion += 360;
+            foto.style.transform = `rotate(${rotacion}deg)`;
+            foto.style.transition = "transform 0.8s ease";
+        });
+
+        function mostrarDetalleGusto(mensaje) {
+            alert(mensaje);
+        }
+
+        function confirmarNavegacion(event) {
+            const respuesta = confirm("¿Quieres abrir este enlace en una nueva pestaña?");
+            if (!respuesta) {
+                event.preventDefault(); 
+                return false;
+            }
+        }
+
+        window.onload = function() {
+            inicializarSaludo();
+        };
+    </script>
+</body>
+</html>

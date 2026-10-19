@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Mario Quintanar Rodriguez</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.4s ease;
+        }
+
+        .btn-interruptor {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #00ffff;
+            color: #121212;
+            border: none;
+            padding: 12px 24px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 0 15px #00ffff;
+            z-index: 1000;
+            transition: transform 0.2s;
+        }
+        .btn-interruptor:hover {
+            transform: scale(1.05);
+        }
+
+        .reloj-pantalla {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ffff;
+            padding: 12px 20px;
+            font-family: monospace;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 15px #00ffff;
+            z-index: 1000;
+        }
+
+        
+        .lista-estilizada {
+            list-style: none;
+            padding: 0;
+        }
+        .lista-estilizada li {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 8px 0;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #00ffff;
+        }
+
+        img {
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        nav a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+
+        .multimedia-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px dashed rgba(0, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reloj-pantalla" id="relojDigital">00:00:00</div>
+    <button class="btn-interruptor" onclick="alternarColor()"> Cambiar Color</button>
+
+    <header style="margin-top: 80px;">
+        <img src="file:///C:/Users/PC_36/Downloads/1791171117220.jpg" alt="lo" width="200" height="200">
+        <hr>
+        <h1><span style="color: rgb(126, 201, 201);">Mis gustos son</span></h1>
+        <ol class="lista-estilizada">
+            <li><span style="color: rgb(145, 209, 209);">Me gusta jugar fútbol</span></li>
+            <li><span style="color: rgb(163, 221, 221);">Me gustan los postres</span></li>
+            <li><span style="color: rgb(131, 235, 121);">Me gusta jugar videojuegos</span></li>
+        </ol>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="file:///C:/Users/PC_36/Documents/MARIO2.html" target="_blank">Mis gustos</a></li>
+            <li><a href="file:///C:/Users/PC_36/Pictures/html.mario.1/formulario.html" target="_blank">Formulario</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2><span style="color: #00ffff;">Yo soy</span></h2>
+        <ul class="lista-estilizada">
+            <li><span style="color: rgb(243, 145, 145);">Se me rompió mi pantalón</span></li>
+            <li><span style="color: rgb(230, 236, 236);">Me caí</span></li>
+            <li><span style="color: rgb(95, 138, 255);">Soy bueno en los videojuegos</span></li>
+            <li><span style="color: rgb(27, 102, 102);">Se me perdió mi reloj</span></li>
+            <li><span style="color: rgb(110, 110, 110);">Me caí cuando me estaba levantando</span></li>
+            <li><span style="color: rgb(82, 167, 167);">Soy una persona gentil</span></li>
+        </ul>
+
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 20px 0;">
+            <img src="file:///C:/Users/PC_36/Downloads/1791171239057.jpg" alt="yo" width="200" height="200">
+            <img src="file:///C:/Users/PC_36/Downloads/1791171353675.jpg" alt="yo1" width="200" height="200">
+            <img src="file:///C:/Users/PC_36/Downloads/1791171440610.jpg" alt="yo2" width="200" height="200">
+            <img src="c:\Users\PC_36\Pictures\Screenshots\Captura de pantalla 2026-10-12 165510.png" alt="yo3" width="250" height="250">
+        </div>
+
+        <table>
+            <tr>
+                <th><span style="color: rgb(134, 47, 47);">AMIGO</span></th>
+                <th><span style="color: rgb(41, 124, 124);">NOMBRE</span></th>
+                <th><span style="color: rgb(144, 150, 150);">IMAGEN</span></th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Andres</td>
+                <td><img src="file:///C:/Users/PC_36/Downloads/1791172082004.jpg" alt="m1" width="60" height="60"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Daniel</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Jesus</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Raul</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>AMIGO</th>
+                <th>NOMBRE</th>
+                <th>IMAGEN</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Pedro</td>
+                <td><img src="file:///C:/Users/PC_36/Downloads/1791172229679.jpg" alt="m2" width="60" height="60"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Miguel</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Alfredo</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Rafita</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <th>AMIGO</th>
+                <th>NOMBRE</th>
+                <th>IMAGEN</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Adair</td>
+                <td><img src="file:///C:/Users/PC_36/Pictures/Screenshots/ultima%20.png" alt="m3" width="60" height="60"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Rene</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lamin</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Donovan</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div style="margin: 20px 0;">
+            <h3 style="color: aqua;">Mi misión: terminar la prepa con buen promedio</h3>
+            <h3 style="color: aqua;">Visión: es lograr encontrar un empleo estable</h3>
+        </div>
+
+        <section class="multimedia-box">
+            <p style="color: aqua; margin: 5px 0;"><strong>Nombre:</strong> MARIO QUINTANAR RODRIGUEZ</p>
+            <p style="color: aqua; margin: 5px 0;"><strong>Correo:</strong> qurm100917hmcndra0@soycecytem.mx</p>
+            <p style="color: aqua; margin: 5px 0;"><strong>Redes:</strong> @dze_mario</p>
+            
+            <div style="margin-top: 15px;">
+                <video width="10%" max-width="120" controls>
+                    <source src="c:\Users\PC_36\Downloads\Download (6).mp4">
+                </video>
+            </div>
+            <div style="margin-top: 15px;">
+                <audio controls style="width: 10%;">
+                    <source src="c:\Users\PC_36\Downloads\Download (4).mp4">
+                </audio>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function correrReloj() {
+            const tiempo = new Date();
+            document.getElementById('relojDigital').innerText = tiempo.toLocaleTimeString();
+        }
+        setInterval(correrReloj, 1000);
+        correrReloj();
+
+        let colorOriginal = true;
+        function alternarColor() {
+            if (colorOriginal) {
+                document.body.style.backgroundColor = "#0b1521"; 
+                colorOriginal = false;
+            } else {
+                document.body.style.backgroundColor = "#121212"; 
+                colorOriginal = true;
+            }
+        }
+    </script>
+</body>
